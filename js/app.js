@@ -22,6 +22,28 @@ function handleInstructionsModal() {
 // `handleInstructionsModal` function.
 $(document).ready(function(){
 	handleInstructionsModal();
+
+function newGame() {
+	let random = Math.random()
+	random = random * 100
+	random = Math.floor(random)
+	return random;
+}
+
+$('.js-new-game').click(function() {
+	console.log(newGame())
+})
+
 });
+
+
+$('form').submit(function() {
+	event.preventDefault();
+	var guess = $('#js-user-guess').val()
+	if (abs(random - guess) <= 50) {
+		console.log("too hot")
+	}
+})
+
 
 
